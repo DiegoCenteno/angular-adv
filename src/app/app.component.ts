@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+declare function customInitFunctions(): void;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = '03-adminpro';
+export class AppComponent implements OnInit {
+  title = '';
+
+  ngOnInit(): void {
+    customInitFunctions();
+  }
 }
